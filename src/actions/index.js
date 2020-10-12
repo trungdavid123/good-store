@@ -28,7 +28,7 @@ export const CHECK = 'CHECK';
 export const renderedItems = () => async (dispatch) => {
   const response = await jsonplaceholder.get('/featuresitems');
 
-  dispatch({ type: FETCH_ITEM, payload: response.data[0] });
+  dispatch({ type: FETCH_ITEM, payload: response.data[0].data[0] });
 };
 
 export const addItem = (item, webId, quantity) => {
