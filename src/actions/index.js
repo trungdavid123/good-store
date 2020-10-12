@@ -26,7 +26,7 @@ export const THOUTO10000 = 'THOUTO10000';
 export const CHECK = 'CHECK';
 
 export const renderedItems = () => async (dispatch) => {
-  const response = await jsonplaceholder.get('/data');
+  const response = await jsonplaceholder.get('/featuresitems');
 
   dispatch({ type: FETCH_ITEM, payload: response.data[0] });
 };
