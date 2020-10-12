@@ -2995,6 +2995,10 @@ input:focus {
     margin-bottom: 44rem;
   }
 
+  .product-information {
+    border: none;
+  }
+
   .check-out {
     padding: 1rem;
     width: 30%;
