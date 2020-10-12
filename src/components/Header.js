@@ -31,7 +31,7 @@ function Header({ signOut, signIn }) {
 
   const handleScroll = () => {
     let curScroll = window.pageYOffset;
-    if (curScroll > lastScrollY) {
+    if (curScroll > lastScrollY && curScroll > 50) {
       setHide(true);
     } else {
       setHide(false);

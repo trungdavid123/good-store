@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { connect } from 'react-redux';
@@ -7,6 +7,10 @@ import { Link } from 'react-router-dom';
 import { message } from 'antd';
 
 function RecommendItem({ items, addItem }) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const success = (value, name) => {
     message
       .loading('Action in progress..', 1.5)
@@ -33,6 +37,7 @@ function RecommendItem({ items, addItem }) {
     items.map((el, i) => {
       return (
         <div
+          onClick={() => window.scrollTo(0, 0)}
           key={i}
           className="product-image-wrapper"
           style={{ paddingLeft: '1.2rem' }}

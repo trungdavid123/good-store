@@ -24,37 +24,23 @@ function Cart() {
         );
       })
     ) : (
-      <div style={{ padding: '2rem' }}>NO ITEMS IN CART</div>
+      <div
+        className={state.length > 1 ? '' : 'mb-44r'}
+        style={{ padding: '2rem' }}
+      >
+        NO ITEMS IN CART
+      </div>
     );
 
   return (
-    <section id="cart_items">
-      <div class="container mb-25r">
-        <div class="breadcrumbs">
-          <ol class="breadcrumb">
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li class="active">Shopping Cart</li>
-          </ol>
+    <div className="container">
+      <div class="shopping-cart-1">{showItems}</div>
+      {state.length > 1 ? (
+        <div className="check-out">
+          <span>Check out</span>
         </div>
-        <div class="table-responsive cart_info">
-          <table class="table table-condensed">
-            <thead>
-              <tr class="cart_menu">
-                <td class="image">Item</td>
-                <td class="description"></td>
-                <td class="price">Price</td>
-                <td class="quantity">Quantity</td>
-                <td class="total">Total</td>
-                <td></td>
-              </tr>
-            </thead>
-            <tbody>{showItems}</tbody>
-          </table>
-        </div>
-      </div>
-    </section>
+      ) : null}
+    </div>
   );
 }
 

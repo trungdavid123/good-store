@@ -28,59 +28,50 @@ function CartItem({
   };
 
   return (
-    <tr>
-      <td class="cart_product">
-        <a href="">
-          <img
-            className="cart-img"
-            src={imgSrc}
-            style={{ width: '40%' }}
-            alt=""
-          />
-        </a>
-      </td>
-      <td class="cart_description">
-        <h4>
-          <a href="">{title}</a>
-        </h4>
-        <p>Web ID: {webId}</p>
-      </td>
-      <td class="cart_price">
-        <p>{price}kr.</p>
-      </td>
-      <td class="cart_quantity">
-        <div class="cart_quantity_button">
-          <a class="cart_quantity_up" onClick={() => increment(webId)}>
-            {' '}
-            +{' '}
-          </a>
-          <input
-            class="cart_quantity_input"
-            type="text"
-            name="quantity"
-            value={quantity}
-            autocomplete="off"
-            size="2"
-          />
-          <a class="cart_quantity_down" onClick={() => decrement(webId)}>
-            {' '}
-            -{' '}
-          </a>
-        </div>
-      </td>
-      <td class="cart_total">
-        <p class="cart_total_price">{total()}kr.</p>
-      </td>
-      <td
-        class="cart_delete"
-        onClick={() => combineButton(id)}
-        style={{ paddingRight: '9rem' }}
-      >
-        <a class="cart_quantity_delete">
-          <i class="fa fa-times"></i>
-        </a>
-      </td>
-    </tr>
+    <div class="item-1">
+      <div class="buttons-1">
+        <span class="delete-btn" onClick={() => combineButton(id)}>
+          <i class="fas fa-trash-alt"></i>
+        </span>
+        <span class="like-btn"></span>
+      </div>
+
+      <div class="image-1">
+        <img src={imgSrc} alt="" />
+      </div>
+
+      <div class="description-1">
+        <span>{title}</span>
+      </div>
+
+      <div class="quantity-1">
+        <button
+          class="plus-btn btn-cart"
+          type="button"
+          name="button"
+          onClick={() => decrement(webId)}
+        >
+          -
+        </button>
+        <input
+          type="text"
+          name="quantity"
+          value={quantity}
+          autocomplete="off"
+          size="2"
+        />
+        <button
+          class="minus-btn btn-cart"
+          type="button"
+          name="button"
+          onClick={() => increment(webId)}
+        >
+          +
+        </button>
+      </div>
+
+      <div class="total-price">{total()} kr</div>
+    </div>
   );
 }
 
