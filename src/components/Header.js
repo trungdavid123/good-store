@@ -100,11 +100,7 @@ function Header({ signOut, signIn }) {
         </Link>
       );
     } else if (state === null) {
-      return (
-        <Link to="/login" onClick={() => hideAndSignOut()}>
-          <i className="fas fa-sign-out-alt"></i> Logout
-        </Link>
-      );
+      return null;
     } else {
       return (
         <Link to="/login" onClick={() => hideAndSignOut()}>
